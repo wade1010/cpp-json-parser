@@ -37,6 +37,17 @@ namespace crab
             operator double();
             operator string();
 
+            // 数组
+            //  重载[]
+            Json &operator[](int);
+            void append(const Json &);
+            string str() const;
+
+            // 对象
+            // 重载[]
+            Json &operator[](const char *);
+            Json &operator[](const string &);
+
         private:
             union Value
             {
