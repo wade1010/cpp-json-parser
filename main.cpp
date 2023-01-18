@@ -28,13 +28,43 @@ void test()
         double d = arr[2];
         const string &s = arr[3]; */
 
+    /*     Json obj;
+        obj["bool"] = true;
+        obj["int"] = 111;
+        obj["double"] = 1.11;
+        obj["str"] = "c++";
+
+        std::cout << obj.str() << std::endl; */
+
+    /*     Json arr;
+        arr[0] = true;
+        arr[1] = 111;
+        arr[2] = 1.11;
+        arr[3] = "c++";
+        for (auto it = arr.begin(); it != arr.end(); it++)
+        {
+            std::cout << it->str() << std::endl;
+        } */
+
+    Json arr;
+    arr[0] = true;
+    arr[1] = 111;
+    arr[2] = 1.11;
+    arr[3] = "c++";
+    std::cout << arr.has(0) << std::endl;
+    std::cout << arr.has(4) << std::endl;
+    arr.remove(0);
+    std::cout << arr.has(0) << std::endl;
+
     Json obj;
     obj["bool"] = true;
     obj["int"] = 111;
     obj["double"] = 1.11;
     obj["str"] = "c++";
-
-    std::cout << obj.str() << std::endl;
+    std::cout << obj.has("bool") << std::endl;
+    std::cout << obj.has("xxx") << std::endl;
+    obj.remove("bool");
+    std::cout << obj.has("bool") << std::endl;
 }
 int main()
 {
